@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://twitter.github.io/bootstrap/examples/carousel.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>GIS Research Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 50px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      color:white;
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+    /* put at top when scrolled down */
+    .navbar .nav-scrolled{
+      position: fixed;
+      width:100%;
+      top:0px;
+      padding-top:10px;
+    }
+
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: -50px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 400px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 350px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+    h1{
+      font-size:24.5px;
+    }
+
+    .item a:hover{
+      color:#999999;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    #home {
+      padding-top: 55px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 80px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -35px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .muted-innertext{
+      font-size: 17px;
+      color: black;
+      padding-right: 10px;
+    }
+
+    .muted{
+      font-size: 30px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="http://twitter.github.io/bootstrap/assets/ico/favicon.png">
+  <style type="text/css"></style><style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style></head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/index.html#home">GIS Research Services</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="/index.html#custom">Custom GIS</a></li>
+                <li><a href="/index.html#webbased">Web-based</a></li>
+                <li><a href="/index.html#management">Data Management</a></li>
+                <li><a href="/index.html#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item">
+          <a href="/index.html#custom">
+            <img src="./img/custom-image.jpg" alt="">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Reach beyond the basic GIS </h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="/index.html#webbased">
+            <img src="./img/webbased.jpg" alt="">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Gather, analyze, and disseminate information on-the-fly</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item active">
+          <a href="/index.html#management">
+            <img src="./img/management.jpg" alt="">
+            <div class="container">
+              <div class="carousel-caption">
+                  <h1>Big Data Problems, Big Data Solutions</h1>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a class="left carousel-control" href="http://twitter.github.io/bootstrap/examples/carousel.html#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="http://twitter.github.io/bootstrap/examples/carousel.html#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div id="home" class="row marketing">
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/160x160" alt="160x160" style="width: 160px; height: 160px;" src="./img/marketing-custom.png">
+          <h2>Custom GIS Solutions</h2>
+          <p>Reach beyond the basic GIS to a fully customized solution for your situation.  From tailored analyses to printed maps, let's explore how together we can add value to your current project.</p>
+          <p><a class="btn" href="/index.html#custom">See Example »</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/160x160" alt="160x160" style="width: 160px; height: 160px;" src="./img/marketing-webbased.png">
+          <h2>Web-based GIS Solutions</h2>
+          <p>Gather, analyze, and disseminate information on-the-fly using a single tool available anywhere.  We can find solutions together by seamlessly integrating GIS into your current web site or building a new one.  </p>
+          <p><a class="btn" href="/index.html#webbased">See Example »</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/160x160" alt="160x160" style="width: 160px; height: 160px;" src="./img/marketing-management.png">
+          <h2>Data Management</h2>
+          <p>Big data problems can be faced with big data solutions.  Provide your numerous databases, spreadsheets, comma delineated text files, and whatever else you may have and receive back organized data ready to be used. </p>
+          <p><a class="btn" href="/index.html#management">See Example »</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div id="custom" class="featurette">
+        <img class="featurette-image pull-right" src="./img/featurette-custom.png">
+        <h2 class="featurette-heading">Custom GIS Solutions <span class="muted">Reach beyond the basic GIS.</span></h2>
+        <p class="lead">b.  A new method was created to explore the reason why there is such a huge geographical disparity of total food cost across a three county area in Mississippi.  A duel objective optimization problem was developed and implemented using python scripting to estimate the lowest cost based on the price of walking, public, and driving transportation and the food cost itself.  It was found that transportation costs do substantially add a total overall cost to obtaining a healthy diet.  In addition, rural residents were found to be paying the most for transportation and food prices compared to urban residents.  The final paper is to be publish in an academic journal soon.  </p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div id="webbased" class="featurette">
+        <img class="featurette-image pull-left" src="./img/featurette-webbased.png">
+        <h2 class="featurette-heading">Web-based Solutions. <span class="muted">Gather, analyze, and disseminate information on-the-fly.</span></h2>
+        <p class="lead">Multiple GIS solutions were integrated into <a href='http://localfoodsystems.org' target='blank'>LocalFoodSystems.org</a>.  First, <a href='http://localfoodsystems.org/map' target='blank'>a mapping application</a> was created to find business ideas in a user's area while being able to visual potential supply chain connections that were generated by a  system algorithm.  This allowed users to not only add their own business ideas and get results, but it immediately provided them with potential business partners that might have been right down the street.  <a href='http://localfoodsystems.org/businessassets' target='blank'>The second mapping application</a> displayed and allowed overlaying of  a number of GIS models of an agricultural asset inventory.  The user could zoom into their backyard to see if they have the suitable area to grow grapes, build a solar array, or start up a biodigestor.  </p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div id="management" class="featurette">
+        <img class="featurette-image pull-right" src="./img/featurette-management.png">
+        <h2 class="featurette-heading">Data Management <span class="muted">Big data problems.  Big data solutions.</span></h2>
+        <p class="lead">Years of social media data were cleaned and combined to provide insight into topic discussion, geographical relation, and communication.  A relational database was combined with georeferenced IP addresses and multiple sources of location data to maximize the dataset while maintaining accuracy.  These data were then combined with an unsupervised text classification analysis that generated common topics being discussed across the entire social media site.  The result were multiple arrays of vectors that held multiple relations between thousands of people.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div id="contact" class="featurette">
+        <img class="featurette-image pull-left" src="./img/featurette-contact.png">
+        <h2 class="featurette-heading">Contact <span class="muted">Nathan Hilbert</span></h2>
+        <p class="lead"><span class="muted-innertext">email:</span>nathan at gisrs.net</p>
+        <p class="lead"><span class="muted-innertext">address:</span>Pounden Hall / 1680 Madison Ave / Wooster, OH 44691</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="/index.html#home">Back to top</a></p>
+        <p>© 2013 GIS Research Services</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/waypoints.min.js"></script>
+
+
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel();
+          if (location.hash != ""){
+            var trigger = location.hash;
+            var obj = $('li a[href="/index.html#' + trigger + '"]');
+            $(obj).parent().addClass("active");
+            $('.navbar-inner').addClass("nav-scrolled");
+          }
+          $('.navbar').waypoint(function(direction){
+            if (direction == "up" && $(this).children(".navbar-inner").hasClass("nav-scrolled")){
+              $(this).children(".navbar-inner").removeClass("nav-scrolled");
+            }
+            else{
+              $(this).children(".navbar-inner").addClass("nav-scrolled");
+            }
+          });
+          $('.featurette').waypoint(function(direction){
+            $('li.active').removeClass('active');
+            var trigger = $(this).attr("id");
+            var obj = $('li a[href="/index.html#' + trigger + '"]');
+            $(obj).parent().addClass("active");
+          });
+          $('.row').waypoint(function(direction){
+            $('li.active').removeClass('active');
+          });
+        })
+      }(window.jQuery)
+    </script>
+    <script src="./js/holder.js"></script>
+    <script src="./js/smoothscroll.js"></script>
+
+
+</body></html>
