@@ -16,13 +16,11 @@ $(document).ready(function() {
       var $target = $(this.hash), target = this.hash;
       if (target) {
         var targetOffset = $target.offset().top;
-        console.log(targetOffset);
         $(this).click(function(event) {
           event.preventDefault();
           $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
             location.hash = target;
             $('li.active').removeClass('active');
-            console.log(target);
             var obj = $('li a[href="/index.html' + target + '"]');
             $(obj).parent().addClass("active");
           });
